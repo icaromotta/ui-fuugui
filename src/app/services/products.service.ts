@@ -1,10 +1,10 @@
+import { environment } from './../../environments/environment';
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap, delay, map } from 'rxjs/operators';
 
-import { Product } from '../models/product.model';
 import { ProductInterfaces } from '../interfaces/product';
 
 @Injectable({
@@ -12,11 +12,23 @@ import { ProductInterfaces } from '../interfaces/product';
 })
 export class ProductsService {
 
-  private readonly API = 'http://localhost:3000/products';
+  private readonly API = `${environment.API}products`;
 
   constructor(private http: HttpClient) { }
 
-  list() {
+  listAll() {
     return this.http.get<ProductInterfaces[]>(`${this.API}/`)
+      .pipe(
+        delay(1000),
+        // tap(console.log)
+      )
+  }
+
+  listByCategory(category) {
+    return this.http.get<ProductInterfaces[]>(`${this.API}/by-category?category=${category}`)
+      .pipe(
+        // delay(1000),
+        // tap(console.log)
+      )
   }
 }

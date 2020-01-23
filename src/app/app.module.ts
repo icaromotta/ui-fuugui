@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ShowcaseComponent } from './showcase/showcase.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './shared/card/card.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ShowcaseComponent
+    ShowcaseComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

@@ -5,28 +5,35 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-        <a class="navbar-brand" href="#">Fuugui</a>
+        <a class="navbar-brand" href="/">Fuugui</a>
 
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Comida <span class="sr-only">(current)</span></a>
+                <a class="nav-link" (click)="getProductsByCategory('food')" href="#food">Comida <span
+                        class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Eletrônicos <span class="sr-only">(current)</span></a>
+                <a class="nav-link" (click)="getProductsByCategory('eletronic')" href="#eletronics">Eletrônicos <span
+                        class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Pet <span class="sr-only">(current)</span></a>
+                <a class="nav-link" (click)="getProductsByCategory('pet')" href="#pet">Pet <span
+                        class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Moda <span class="sr-only">(current)</span></a>
+                <a class="nav-link" (click)="getProductsByCategory('fashion')" href="#moda">Moda <span
+                        class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Cosméticos <span class="sr-only">(current)</span></a>
+                <a class="nav-link" (click)="getProductsByCategory('cosmetic')" href="#cosmetic">Cosméticos <span
+                        class="sr-only">(current)</span></a>
             </li>
         </ul>
 
-        <button class="btn"><img class="right-icon" src="https://img.icons8.com/carbon-copy/100/000000/shopping-basket-2.png"></button>
-        <button class="btn"><img class="right-icon" src="https://img.icons8.com/carbon-copy/100/000000/squared-menu.png"></button>
-    
+        <button class="btn"><img class="right-icon"
+                src="https://img.icons8.com/carbon-copy/100/000000/shopping-basket-2.png"></button>
+        <button class="btn"><img class="right-icon"
+                src="https://img.icons8.com/carbon-copy/100/000000/squared-menu.png"></button>
+
     </div>
 </nav>

@@ -1,8 +1,8 @@
 import { Product } from './../models/product.model';
 import { ProductInterfaces } from './../interfaces/product';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { ProductsService } from '../services/products.service';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-showcase',
@@ -11,26 +11,21 @@ import { Observable } from 'rxjs';
 })
 export class ShowcaseComponent implements OnInit {
 
-  productCounter = 0
   products: ProductInterfaces[]
+  products$: Observable<ProductInterfaces[]>
+  toogle: boolean = true
+
+  @Input() productCategory: any;
 
   constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
-
-    this.productsService.list()
-      .subscribe((response) => {
-        this.products = response
-      });
+    
+    this.products$ = this.productsService.listAll()    
   }
 
-  addItemToCart() {
-
-    return this.productCounter++;
-  }
-
-  removeItemToCart() {
-
-    return this.productCounter--;
+  ngOnChanges(changes: SimpleChanges): void {
+    
+    this.products$ = this.productsService.listByCategory(this.productCategory)
   }
 }

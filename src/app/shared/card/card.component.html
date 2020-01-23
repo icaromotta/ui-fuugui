@@ -1,0 +1,16 @@
+<div class="card mb-3">
+  <img src="{{ product[0].image }}" class="card-img-top" alt="...">
+  <div class="card-body">
+
+    <div class="d-flex justify-content-between">
+      <h5 class="card-title">{{ product[0].name }}</h5>
+      <span>R$ {{ product[0].price }}</span>
+    </div>
+
+    <div class="d-flex justify-content-between" style="width: 50%;">
+      <button class="btn btn-primary" (click)="addItemToCart()">+</button>
+      <h4 class="mt-1"> {{ productCounter }} </h4>
+      <button class="btn btn-primary" (click)="removeItemToCart()">-</button>
+    </div>
+  </div>
+</div>

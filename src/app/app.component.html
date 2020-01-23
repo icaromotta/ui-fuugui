@@ -1,4 +1,4 @@
-<app-header></app-header>
-<app-showcase></app-showcase>
+<app-header (selectedCategory)="receptor($event)"></app-header>
+<app-showcase [productCategory]="category"></app-showcase>
 
 <router-outlet></router-outlet>
