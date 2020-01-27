@@ -1,7 +1,39 @@
 .showcase {
 
-    .cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  grid-template-areas: "display checkout";
 
-        margin-top: 20px;
+  .display {
+
+    grid-area: display;
+
+  }
+
+  .checkout {
+
+    background-color: #e8eaf6 !important;
+    grid-area: checkout;
+
+    .details {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+
+      li {}
     }
+  }
+}
+
+.showcase-checkout {
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10fr;
+  grid-template-areas: "display";
+
+  .checkout {
+    display: none;
+  }
 }

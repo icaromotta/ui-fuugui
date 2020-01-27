@@ -4,11 +4,11 @@
 
     <div class="d-flex justify-content-between">
       <h5 class="card-title">{{ product[0].name }}</h5>
-      <span>R$ {{ product[0].price }}</span>
+      <span style="color: #acacec;">R$ {{ product[0].price }}</span>
     </div>
 
     <div class="d-flex justify-content-between" style="width: 50%;">
-      <button class="btn btn-primary" (click)="addItemToCart()">+</button>
+      <button class="btn btn-primary" (click)="addItemToCart(product[0])">+</button>
       <h4 class="mt-1"> {{ productCounter }} </h4>
       <button class="btn btn-primary" (click)="removeItemToCart()">-</button>
     </div>

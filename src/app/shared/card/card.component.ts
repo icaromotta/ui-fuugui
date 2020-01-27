@@ -9,18 +9,24 @@ export class CardComponent implements OnInit {
 
   @Input() product: any;
   productCounter = 0
+  cart = []
 
   constructor() { }
 
   ngOnInit() {
 
-    console.log(this.product);
+    console.log(this.product)
     
   }
 
-  addItemToCart() {
+  addItemToCart(product) {
 
-    return this.productCounter++;
+    console.log(this.productCounter++)
+    
+    this.cart.push(product)
+
+    console.log(this.cart)
+    
   }
 
   removeItemToCart() {

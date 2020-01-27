@@ -15,17 +15,20 @@ export class ShowcaseComponent implements OnInit {
   products$: Observable<ProductInterfaces[]>
   toogle: boolean = true
 
-  @Input() productCategory: any;
+  @Input() productCategory: any
+  @Input() checkout: boolean
+  checkoutIsOpen: boolean = true
 
   constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
     
-    this.products$ = this.productsService.listAll()    
+    this.products$ = this.productsService.listAll()
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    
+  
+    // this.checkoutIsOpen = this.checkout 
     this.products$ = this.productsService.listByCategory(this.productCategory)
   }
 }

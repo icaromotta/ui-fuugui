@@ -6,16 +6,22 @@ import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  
+
   title = 'ui-fuugui';
   category: string
+  checkoutNow: boolean
 
   ngOnInit() {
-    
+
   }
 
-receptor(selectedCategory) {
-  
+  receptor(selectedCategory) {
+
     this.category = selectedCategory
+  }
+
+  toogleReceptor(checkoutNow) {
+
+    this.checkoutNow = checkoutNow
   }
 }
