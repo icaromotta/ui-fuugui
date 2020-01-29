@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { ShowcaseComponent } from './showcase/showcase.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './shared/card/card.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { CardComponent } from './shared/card/card.component';
     AppComponent,
     HeaderComponent,
     ShowcaseComponent,
-    CardComponent
+    CardComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

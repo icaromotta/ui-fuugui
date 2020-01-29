@@ -21,7 +21,7 @@ export class CardComponent implements OnInit {
 
   addItemToCart(product) {
 
-    console.log(this.productCounter++)
+    this.productCounter++
     
     this.cart.push(product)
 
