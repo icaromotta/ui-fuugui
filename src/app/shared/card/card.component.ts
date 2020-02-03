@@ -2,6 +2,9 @@ import { Observable } from 'rxjs';
 import { CartService } from './../../services/cart.service';
 import { Component, OnInit, Input } from '@angular/core';
 
+import Swal from 'sweetalert2';
+
+
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -37,6 +40,8 @@ export class CardComponent implements OnInit {
     this.cartService.upSertCart(item)
       .subscribe((result) => {
         console.log(result)
+      }, (err) => {
+        Swal.fire('Oops...', err.error.message, 'error')
       })
   }
 
