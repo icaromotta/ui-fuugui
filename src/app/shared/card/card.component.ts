@@ -22,16 +22,16 @@ export class CardComponent implements OnInit {
 
   }
 
-  addItemToCart(product) {
+  addItemToCart(product: any) {
 
     this.productCounter++
 
     let item = {
-      userId: '5e333827b61bd50d63ad67f7',
+      userId: '5e347394010c38215f84709a',
       productName: product.name,
       productId: product._id,
       amount: this.productCounter,
-      // price: product.price,
+      price: product.price,
     }
 
     this.cartService.upSertCart(item)

@@ -7,10 +7,14 @@
       <span style="color: #acacec;">R$ {{ product[0].price }}</span>
     </div>
 
-    <div class="d-flex justify-content-between" style="width: 50%;">
-      <button class="btn btn-primary" (click)="addItemToCart(product[0])">+</button>
-      <h4 class="mt-1"> {{ productCounter }} </h4>
-      <button class="btn btn-primary" (click)="removeItemToCart()">-</button>
+    <div class="d-flex justify-content-between">
+
+      <button class="btn btn-primary" (click)="addItemToCart(product[0])" *ngIf="product[0].inStock != 0">+</button>
+      <h4 class="mt-1" *ngIf="product[0].inStock != 0"> {{ productCounter }} </h4>
+      <button class="btn btn-primary" (click)="removeItemToCart()" *ngIf="product[0].inStock != 0">-</button>
+      <span *ngIf="product[0].inStock == 0">PRODUTO ESGOTADO</span>
+
     </div>
+    
   </div>
 </div>
