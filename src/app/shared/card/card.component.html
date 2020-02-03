@@ -11,7 +11,7 @@
 
       <button class="btn btn-primary" (click)="addItemToCart(product[0])" *ngIf="product[0].inStock != 0">+</button>
       <h4 class="mt-1" *ngIf="product[0].inStock != 0"> {{ productCounter }} </h4>
-      <button class="btn btn-primary" (click)="removeItemToCart()" *ngIf="product[0].inStock != 0">-</button>
+      <button class="btn btn-primary" (click)="removeItemToCart(product[0])" *ngIf="product[0].inStock != 0">-</button>
       <span *ngIf="product[0].inStock == 0">PRODUTO ESGOTADO</span>
 
     </div>

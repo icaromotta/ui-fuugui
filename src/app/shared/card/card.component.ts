@@ -30,7 +30,7 @@ export class CardComponent implements OnInit {
     this.productCounter++
 
     let item = {
-      userId: '5e347394010c38215f84709a',
+      userId: '5e3894896a92ed70588b8043',
       productName: product.name,
       productId: product._id,
       amount: this.productCounter,
@@ -45,10 +45,27 @@ export class CardComponent implements OnInit {
       })
   }
 
-  removeItemToCart() {
+  removeItemToCart(product: any) {
 
-    if (this.productCounter != 0) {
-      return this.productCounter--;
+    if (this.productCounter <= 0) {
+      return this.productCounter
     }
+
+    this.productCounter--
+
+    let item = {
+      userId: '5e3894896a92ed70588b8043',
+      productName: product.name,
+      productId: product._id,
+      amount: this.productCounter,
+      price: product.price,
+    }
+
+    this.cartService.upSertCart(item)
+      .subscribe((result) => {
+        console.log(result)
+      }, (err) => {
+        Swal.fire('Oops...', err.error.message, 'error')
+      })
   }
 }
