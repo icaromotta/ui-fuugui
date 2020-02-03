@@ -15,11 +15,9 @@ export class CartService {
 
   upSertCart(body) {
 
-    console.log('muislaias');
-
     return this.http.put<any>(`${this.API}`, body)
       .pipe(
-        tap(console.log)
+        // tap(console.log)
       )
   }
 }
