@@ -9,13 +9,21 @@ import { tap, delay, map } from 'rxjs/operators';
 })
 export class CartService {
 
-  private readonly API = `${environment.API}users/add-item-cart`;
+  private readonly API = `${environment.API}users`;
 
   constructor(private http: HttpClient) { }
 
-  upSertCart(body) {
+  upSertCart(body: any) {
 
-    return this.http.put<any>(`${this.API}`, body)
+    return this.http.put<any>(`${this.API}/add-item-cart`, body)
+      .pipe(
+        // tap(console.log)
+      )
+  }
+
+  removeCartItem(body: any) {
+
+    return this.http.put<any>('http://localhost:3000/users/remove-item-cart', body)
       .pipe(
         // tap(console.log)
       )

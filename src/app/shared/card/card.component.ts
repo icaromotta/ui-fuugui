@@ -61,11 +61,12 @@ export class CardComponent implements OnInit {
       price: product.price,
     }
 
-    this.cartService.upSertCart(item)
+    this.cartService.removeCartItem(item)
       .subscribe((result) => {
         console.log(result)
       }, (err) => {
-        Swal.fire('Oops...', err.error.message, 'error')
+        // Swal.fire('Oops...', err.error.message, 'error')
+        // TODO: Evento para atualizar quantidade de items
       })
   }
 }
